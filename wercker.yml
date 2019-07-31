@@ -2,8 +2,7 @@
 box:
   id: openjdk:8-jdk
   ports:
-    - "8080"
-    - "5432"
+    - "5432:5432"
 
 services:
   - id: postgres:9.6
@@ -38,4 +37,4 @@ build:
     - script:
       name: wait service with direct value
       code: |
-        while ! nc -q 1 localhost '5432'</dev/null; do sleep 3; done
+        while ! nc -q 1 127.0.0.1 '5432'</dev/null; do sleep 3; done
