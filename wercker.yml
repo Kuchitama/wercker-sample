@@ -33,6 +33,9 @@ build:
       name: port scan
       code: nmap 127.0.0.1
     - script:
+      name: scan port of postgres
+      code: nmap $POSTGRES_PORT_5432_TCP_ADDR
+    - script:
       name: wait service with env
       code: |
         echo "${POSTGRES_PORT_5432_TCP_ADDR} ${POSTGRES_PORT_5432_TCP_PORT}";
