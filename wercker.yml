@@ -3,6 +3,7 @@ box:
   id: openjdk:8-jdk
   ports:
     - "8080"
+    - "5432"
 
 services:
   - id: postgres:9.6
